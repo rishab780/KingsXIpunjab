@@ -8,16 +8,7 @@ import android.os.Parcelable;
  */
 
 public class PlayersModelClass implements Parcelable {
-    private String mName;
-    /**
-     *
-     * @param in sending in
-     */
-    protected PlayersModelClass(final Parcel in) {
-        mName = in.readString();
-    }
-
-    public final static Creator<PlayersModelClass> CREATOR = new Creator<PlayersModelClass>() {
+     public static final Creator<PlayersModelClass> CREATOR = new Creator<PlayersModelClass>() {
         @Override
         public PlayersModelClass createFromParcel(final Parcel in) {
             return new PlayersModelClass(in);
@@ -28,6 +19,16 @@ public class PlayersModelClass implements Parcelable {
             return new PlayersModelClass[size];
         }
     };
+    private String mName;
+    /**
+     *
+     * @param in sending in
+     */
+    protected PlayersModelClass(final Parcel in) {
+        mName = in.readString();
+    }
+
+   
 
 
     /**
